@@ -1,5 +1,6 @@
 __all__ = (
     "ChartDialogUI",
+    "ExpansionWidgetUI",
     "GrayscaleToMonoWidgetUI",
     "ImageEditorWindowUI",
     "MatrixDialogUI",
@@ -8,6 +9,7 @@ __all__ = (
 )
 
 from .chart_dialog import ChartDialogUI
+from .expansion_widget import ExpansionWidgetUI
 from .grayscale_to_mono_widget import GrayscaleToMonoWidgetUI
 from .image_editor_window import ImageEditorWindowUI
 from .matrix_dialog import MatrixDialogUI
