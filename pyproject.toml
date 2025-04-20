@@ -38,7 +38,6 @@ exclude = [
   "node_modules",
   "site-packages",
   "venv",
-  "ui",
 ]
 
 
@@ -74,4 +73,4 @@ select = [
   "RUF",
 ]
 
-extend-ignore = ["PLR2004"]
+extend-ignore = ["PLR2004", "PLR0915"]
