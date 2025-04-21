@@ -10,7 +10,7 @@ from utils.exceptions import (
     InvalidFileException,
     InvalidImageFormat,
 )
-from window.show_matrix_dialog import ShowImageMatrixDialog
+from window.matrix_dialog import ImageMatrixDialog
 
 
 class ExpansionWidget(QWidget, ExpansionWidgetUI):
@@ -55,7 +55,7 @@ class ExpansionWidget(QWidget, ExpansionWidgetUI):
         self.expanded_image = img.copy()
 
     def show_matrix(self) -> None:
-        show_matrix_dialog = ShowImageMatrixDialog(self)
+        show_matrix_dialog = ImageMatrixDialog(self)
         match self.sender():
             case self.show_source_image_matrix_button:
                 show_matrix_dialog.insert_pixels_to_table(self.source_image)

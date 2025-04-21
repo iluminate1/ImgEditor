@@ -10,7 +10,7 @@ from utils import to_binary_format
 type matrix = list[list[float]]
 
 
-class ShowImageMatrixDialog(QDialog, MatrixDialogUI):
+class ImageMatrixDialog(QDialog, MatrixDialogUI):
     def __init__(self, parent: QWidget | None = None) -> None:
         super().__init__(parent=parent)
         self.setupUi(self)

@@ -8,7 +8,7 @@ from ui import ChartDialogUI
 from utils.pixels_helper import to_binary_format
 
 
-class ShowChartDialog(QDialog, ChartDialogUI):
+class ChartDialog(QDialog, ChartDialogUI):
     def __init__(self, parent: QWidget | None = None) -> None:
         super().__init__(parent=parent)
         self.setup_ui(self)

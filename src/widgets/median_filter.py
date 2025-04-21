@@ -14,7 +14,7 @@ from utils.exceptions import (
 )
 from utils.image_helper import ImageFormat, save_image, set_pixmap
 from utils.pixels_helper import GrayscaleColor
-from window.show_matrix_dialog import ShowImageMatrixDialog
+from window.matrix_dialog import ImageMatrixDialog
 
 
 class MedianFilterWidget(QWidget, MedianFilterWidgetUI):
@@ -131,7 +131,7 @@ class MedianFilterWidget(QWidget, MedianFilterWidgetUI):
         set_pixmap(filtered_image, self.filtered_image_label_pixmap)
 
     def show_matrix(self):
-        show_matrix_dialog = ShowImageMatrixDialog(self)
+        show_matrix_dialog = ImageMatrixDialog(self)
         match self.sender():
             case self.show_source_image_matrix_button:
                 show_matrix_dialog.insert_pixels_to_table(self.source_image)
