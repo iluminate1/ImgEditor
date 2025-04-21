@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MaskDialog</class>
+ <widget class="QDialog" name="MaskDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Mask setup</string>
+  </property>
+  <layout class="QVBoxLayout" name="dialog_layout">
+   <item>
+    <widget class="QTableWidget" name="mask_size_table">
+     <property name="editTriggers">
+      <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+     </property>
+     <property name="selectionMode">
+      <enum>QAbstractItemView::SelectionMode::NoSelection</enum>
+     </property>
+     <property name="rowCount">
+      <number>3</number>
+     </property>
+     <property name="columnCount">
+      <number>3</number>
+     </property>
+     <row/>
+     <row/>
+     <row/>
+     <column/>
+     <column/>
+     <column/>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="buttons_layout">
+     <item>
+      <widget class="QPushButton" name="cancle_button">
+       <property name="text">
+        <string>&amp;Cancle</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="mask_size_combobox">
+       <property name="toolTip">
+        <string>Select mask size</string>
+       </property>
+       <property name="placeholderText">
+        <string>Mask size</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>3x3</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>5x5</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>7x7</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>9x9</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="apply_button">
+       <property name="text">
+        <string>&amp;Apply</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
