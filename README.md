@@ -5,6 +5,7 @@ Application realize some images processing algorithms on pure python.
 - Convert binary image to grayscale (Two waves method).
  - Convert grayscale image to binary (Avg. brightness and S8 method).
  - Median filtering for grayscale image's.
+ - Expansion for binary image's.
  - Convert rgb image to grayscale.
 
 ## Run Locally

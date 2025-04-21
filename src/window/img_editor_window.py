@@ -1,8 +1,12 @@
 from PySide6.QtWidgets import QMainWindow
 
 from ui import ImageEditorWindowUI
-from widgets import GrayscaleToMonoWidget, MonoToGrayscaleWidget
-from widgets.median_filter import MedianFilterWidget
+from widgets import (
+    ExpansionWidget,
+    GrayscaleToMonoWidget,
+    MedianFilterWidget,
+    MonoToGrayscaleWidget,
+)
 
 
 class ImageEditor(QMainWindow, ImageEditorWindowUI):
@@ -20,4 +24,7 @@ class ImageEditor(QMainWindow, ImageEditorWindowUI):
         )
         self.tab_median_filter_layout.addWidget(
             MedianFilterWidget(self.tab_median_filter)
+        )
+        self.tab_expansion_layout.addWidget(
+            ExpansionWidget(self.tab_expansion),
         )

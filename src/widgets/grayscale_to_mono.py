@@ -13,8 +13,8 @@ from utils.exceptions import (
 )
 from utils.image_helper import ImageFormat, load_image, save_image, set_pixmap
 from utils.pixels_helper import BinaryColor
-from window.show_chart_dialog import ShowChartDialog
-from window.show_matrix_dialog import ShowImageMatrixDialog
+from window.chart_dialog import ChartDialog
+from window.matrix_dialog import ImageMatrixDialog
 
 
 class GrayscaleToMonoWidget(QWidget, GrayscaleToMonoWidgetUI):
@@ -157,7 +157,7 @@ class GrayscaleToMonoWidget(QWidget, GrayscaleToMonoWidgetUI):
                 _ = QMessageBox.warning(self, "Save failed", "Something went wrong!")
 
     def show_matrix(self):
-        show_matrix_dialog = ShowImageMatrixDialog(self)
+        show_matrix_dialog = ImageMatrixDialog(self)
         match self.sender():
             case self.show_source_image_matrix_button:
                 show_matrix_dialog.insert_pixels_to_table(self.source_image)
@@ -171,7 +171,7 @@ class GrayscaleToMonoWidget(QWidget, GrayscaleToMonoWidgetUI):
         show_matrix_dialog.show()
 
     def show_histogram(self):
-        show_chart_dialog = ShowChartDialog(self)
+        show_chart_dialog = ChartDialog(self)
         match self.sender():
             case self.show_source_image_histogram_button:
                 show_chart_dialog.set_image(self.source_image)

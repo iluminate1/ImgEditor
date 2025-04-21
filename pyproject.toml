@@ -74,4 +74,7 @@ select = [
   "RUF",
 ]
 
-extend-ignore = ["PLR2004"]
+extend-ignore = ["PLR2004", "PLR0915"]
+
+[tool.ruff.lint.per-file-ignores]
+"src/ui/*" = ["N806", "RUF100"]

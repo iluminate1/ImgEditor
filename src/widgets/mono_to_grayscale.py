@@ -13,7 +13,7 @@ from utils.exceptions import (
 )
 from utils.image_helper import ImageFormat, load_image, save_image, set_pixmap
 from utils.pixels_helper import to_binary_format
-from window.show_matrix_dialog import ShowImageMatrixDialog
+from window.matrix_dialog import ImageMatrixDialog
 
 type matrix = list[list[float]] | None
 
@@ -126,7 +126,7 @@ class MonoToGrayscaleWidget(QWidget, MonoToGrayscaleWidgetUI):
         set_pixmap(self.grayscale_image, self.grayscale_image_label_pixmap)
 
     def show_matrix(self):
-        show_matrix_dialog = ShowImageMatrixDialog(self)
+        show_matrix_dialog = ImageMatrixDialog(self)
         match self.sender():
             case self.show_source_image_matrix_button:
                 show_matrix_dialog.insert_pixels_to_table(self.source_image)
