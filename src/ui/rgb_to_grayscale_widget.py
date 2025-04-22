@@ -22,7 +22,7 @@ from PySide6.QtWidgets import (
 )
 
 
-class RgbToHslWidgetUI:
+class RgbToGrayscaleWidgetUI:
     def setupUi(self, RgbToHslWidget: QWidget):  # noqa: N802, N803, PLR0915
         if not RgbToHslWidget.objectName():
             RgbToHslWidget.setObjectName("RgbToHslWidget")

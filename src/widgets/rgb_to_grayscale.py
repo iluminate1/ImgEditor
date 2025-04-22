@@ -5,7 +5,7 @@ from typing import override
 from PySide6.QtGui import QImage, QResizeEvent, qRgb
 from PySide6.QtWidgets import QMessageBox, QWidget
 
-from ui import RgbToHslWidgetUI
+from ui import RgbToGrayscaleWidgetUI
 from utils import ImageFormat, load_image, save_image, set_pixmap
 from utils.exceptions import (
     ImageLoadException,
@@ -14,7 +14,7 @@ from utils.exceptions import (
 )
 
 
-class RgbToHslWidget(QWidget, RgbToHslWidgetUI):
+class RgbToGrayscaleWidget(QWidget, RgbToGrayscaleWidgetUI):
     def __init__(self, parent: QWidget | None = None) -> None:
         super().__init__(parent=parent)
         self.setupUi(self)

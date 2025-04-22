@@ -9,7 +9,7 @@ __all__ = (
     "MatrixDialogUI",
     "MedianFilterWidgetUI",
     "MonoToGrayscaleWidgetUI",
-    "RgbToHslWidgetUI",
+    "RgbToGrayscaleWidgetUI",
 )
 
 from .chart_dialog import ChartDialogUI
@@ -20,4 +20,4 @@ from .mask_dialog import MaskDialogUI
 from .matrix_dialog import MatrixDialogUI
 from .median_filter_widget import MedianFilterWidgetUI
 from .mono_to_graysacel_widget import MonoToGrayscaleWidgetUI
-from .rgb_to_hsl_widget import RgbToHslWidgetUI
+from .rgb_to_grayscale_widget import RgbToGrayscaleWidgetUI
