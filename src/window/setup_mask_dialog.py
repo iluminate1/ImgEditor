@@ -1,5 +1,4 @@
 from copy import deepcopy
-from functools import cached_property
 
 from PySide6.QtGui import Qt
 from PySide6.QtWidgets import QDialog, QTableWidgetItem, QWidget
@@ -14,33 +13,33 @@ class SetupMaskDialog(QDialog, MaskDialogUI):
         super().__init__(parent=parent)
         self.setupUi(self)
 
-        self._expansion_mask: matrix = [
+        self._mask: matrix = [
             [0, 1, 0],
             [1, 1, 1],
             [0, 1, 0],
         ]
         self.__temp_mask: matrix = deepcopy(
-            self._expansion_mask,
+            self._mask,
         )
 
         self.init_mask()
         self.connect_signals()
 
-    @cached_property
+    @property
     def center_item_index(self) -> int:
-        return len(self._expansion_mask) // 2
-
-    @cached_property
-    def rows(self) -> int:
-        return len(self._expansion_mask)
-
-    @cached_property
-    def cols(self) -> int:
-        return len(self._expansion_mask[0])
+        return len(self._mask) // 2
 
     @property
-    def expansion_mask(self) -> matrix:
-        return self._expansion_mask
+    def rows(self) -> int:
+        return len(self._mask)
+
+    @property
+    def cols(self) -> int:
+        return len(self._mask[0])
+
+    @property
+    def g_mask(self) -> matrix:
+        return self._mask
 
     def connect_signals(self) -> None:
         _ = self.cancle_button.clicked.connect(self.close)
@@ -92,7 +91,7 @@ class SetupMaskDialog(QDialog, MaskDialogUI):
         self.update_mask(self.__temp_mask)
 
     def init_mask(self) -> None:
-        mask = self._expansion_mask
+        mask = self._mask
         rows = self.rows
         cols = self.cols
 
@@ -139,5 +138,5 @@ class SetupMaskDialog(QDialog, MaskDialogUI):
         item.setData(Qt.ItemDataRole.DisplayRole, str(value))
 
     def apply_mask(self) -> None:
-        self.update_mask(self._expansion_mask)
+        self.update_mask(self._mask)
         _ = self.close()

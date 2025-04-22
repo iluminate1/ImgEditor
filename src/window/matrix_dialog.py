@@ -57,7 +57,7 @@ class ImageMatrixDialog(QDialog, MatrixDialogUI):
                     case _:
                         # check for backward compatibility
                         if img.format() == QImage.Format.Format_Mono:
-                            item = QTableWidgetItem(str(p_color))
+                            item = QTableWidgetItem(str(to_binary_format(p_color)))
                         else:
                             item = QTableWidgetItem(str(p_color))
 

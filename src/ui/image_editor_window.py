@@ -70,6 +70,12 @@ class ImageEditorWindowUI:
         self.tab_expansion_layout.setObjectName("tab_expansion_layout")
         self.tabWidget.addTab(self.tab_expansion, "")
 
+        self.tab_erosion = QWidget()
+        self.tab_erosion.setObjectName("tab_erosion")
+        self.tab_erosion_layout = QVBoxLayout(self.tab_erosion)
+        self.tab_erosion_layout.setObjectName("tab_erosion_layout")
+        self.tabWidget.addTab(self.tab_erosion, "")
+
         self.tab_rgb_to_grayscale = QWidget()
         self.tab_rgb_to_grayscale.setObjectName("tab_rgb_to_grayscale")
         self.tab_rgb_to_grayscale_layout = QVBoxLayout(self.tab_rgb_to_grayscale)
@@ -148,6 +154,19 @@ class ImageEditorWindowUI:
             ),
         )
         # endif // QT_CONFIG(tooltip)
+        self.tabWidget.setTabText(
+            self.tabWidget.indexOf(self.tab_erosion),
+            QCoreApplication.translate(
+                "image_editor_window", "E&rosion for binary", None
+            ),
+        )
+        # if QT_CONFIG(tooltip)
+        self.tabWidget.setTabToolTip(
+            self.tabWidget.indexOf(self.tab_erosion),
+            QCoreApplication.translate(
+                "image_editor_window", "Erosion filter for binary images", None
+            ),
+        )
         self.tabWidget.setTabText(
             self.tabWidget.indexOf(self.tab_rgb_to_grayscale),
             QCoreApplication.translate(
