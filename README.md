@@ -9,7 +9,7 @@ Application realize some images processing algorithms on pure python.
  - Erosion for binary images
  - Unlocking for binary images
  - Closing for binary images
- - Convert rgb image to grayscale.
+ - Convert rgb image to grayscale ( 1/2(MIN + MAX) ).
 
 ## Run Locally
 
