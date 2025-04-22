@@ -2,6 +2,7 @@ from PySide6.QtWidgets import QMainWindow
 
 from ui import ImageEditorWindowUI
 from widgets import (
+    ErosionWidget,
     ExpansionWidget,
     GrayscaleToMonoWidget,
     MedianFilterWidget,
@@ -28,6 +29,9 @@ class ImageEditor(QMainWindow, ImageEditorWindowUI):
         )
         self.tab_expansion_layout.addWidget(
             ExpansionWidget(self.tab_expansion),
+        )
+        self.tab_erosion_layout.addWidget(
+            ErosionWidget(self.tab_erosion),
         )
         self.tab_rgb_to_grayscale_layout.addWidget(
             RgbToGrayscaleWidget(self.tab_rgb_to_grayscale)

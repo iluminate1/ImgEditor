@@ -1,4 +1,5 @@
 __all__ = (
+    "ErosionWidget",
     "ExpansionWidget",
     "GrayscaleToMonoWidget",
     "MedianFilterWidget",
@@ -6,6 +7,7 @@ __all__ = (
     "RgbToGrayscaleWidget",
 )
 
+from .erosion import ErosionWidget
 from .expansion import ExpansionWidget
 from .grayscale_to_mono import GrayscaleToMonoWidget
 from .median_filter import MedianFilterWidget
