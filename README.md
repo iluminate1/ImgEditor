@@ -7,6 +7,7 @@ Application realize some images processing algorithms on pure python.
  - Median filtering for grayscale image's.
  - Expansion for binary images.
  - Erosion for binary images
+ - Unlocking for binary images
  - Convert rgb image to grayscale.
 
 ## Run Locally
