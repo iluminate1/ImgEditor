@@ -12,6 +12,7 @@ from utils.exceptions import (
     InvalidFileException,
     InvalidImageFormat,
 )
+from window.matrix_dialog import ImageMatrixDialog
 
 
 class RgbToGrayscaleWidget(QWidget, RgbToGrayscaleWidgetUI):
@@ -21,7 +22,6 @@ class RgbToGrayscaleWidget(QWidget, RgbToGrayscaleWidgetUI):
 
         self.source_image: QImage
         self.grayscale_image: QImage
-
         self.connect_signals()
 
     @override
@@ -35,6 +35,10 @@ class RgbToGrayscaleWidget(QWidget, RgbToGrayscaleWidgetUI):
     def connect_signals(self) -> None:
         _ = self.load_source_image_button.clicked.connect(self.load_source_image)
         _ = self.save_grayscale_image_button.clicked.connect(self.save_image)
+        _ = self.show_grayscale_image_matrix_button.clicked.connect(self.show_matrix)
+        _ = self.show_image_red_matrix_button.clicked.connect(self.show_matrix)
+        _ = self.show_image_green_matrix_button.clicked.connect(self.show_matrix)
+        _ = self.show_image_blue_matrix_button.clicked.connect(self.show_matrix)
 
     def load_source_image(self):
         try:
@@ -90,6 +94,28 @@ class RgbToGrayscaleWidget(QWidget, RgbToGrayscaleWidgetUI):
 
         self.grayscale_image = grayscale_image
         set_pixmap(grayscale_image, self.grayscale_image_label_pixmap)
+
+    def show_matrix(self):
+        show_matrix_dialog = ImageMatrixDialog(self)
+        match self.sender():
+            case self.show_grayscale_image_matrix_button:
+                show_matrix_dialog.insert_pixels_to_table(self.grayscale_image)
+            case self.show_image_red_matrix_button:
+                show_matrix_dialog.insert_pixels_to_table(
+                    self.source_image, ImageFormat.rgb, "red"
+                )
+            case self.show_image_green_matrix_button:
+                show_matrix_dialog.insert_pixels_to_table(
+                    self.source_image, ImageFormat.rgb, "green"
+                )
+            case self.show_image_blue_matrix_button:
+                show_matrix_dialog.insert_pixels_to_table(
+                    self.source_image, ImageFormat.rgb, "blue"
+                )
+            case _:
+                msg = "Invalid sender"
+                raise BaseException(msg)
+        show_matrix_dialog.show()
 
     def save_image(self):
         save_image(self, self.grayscale_image)
