@@ -82,6 +82,12 @@ class ImageEditorWindowUI:
         self.tab_unlocking_layout.setObjectName("tab_unlocking_layout")
         self.tabWidget.addTab(self.tab_unlocking, "")
 
+        self.tab_closures = QWidget()
+        self.tab_closures.setObjectName("tab_closures")
+        self.tab_closures_layout = QVBoxLayout(self.tab_closures)
+        self.tab_closures_layout.setObjectName("tab_closures_layout")
+        self.tabWidget.addTab(self.tab_closures, "")
+
         self.tab_rgb_to_grayscale = QWidget()
         self.tab_rgb_to_grayscale.setObjectName("tab_rgb_to_grayscale")
         self.tab_rgb_to_grayscale_layout = QVBoxLayout(self.tab_rgb_to_grayscale)
@@ -182,6 +188,18 @@ class ImageEditorWindowUI:
             self.tabWidget.indexOf(self.tab_unlocking),
             QCoreApplication.translate(
                 "image_editor_window", "Unlocking for binary images", None
+            ),
+        )
+        # endif // QT_CONFIG(tooltip)
+        self.tabWidget.setTabText(
+            self.tabWidget.indexOf(self.tab_closures),
+            QCoreApplication.translate("image_editor_window", "Closures", None),
+        )
+        # if QT_CONFIG(tooltip)
+        self.tabWidget.setTabToolTip(
+            self.tabWidget.indexOf(self.tab_closures),
+            QCoreApplication.translate(
+                "image_editor_window", "Closures for binary images", None
             ),
         )
         # endif // QT_CONFIG(tooltip)
