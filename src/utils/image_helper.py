@@ -13,6 +13,7 @@ from utils.exceptions import (
 class ImageFormat(enum.Enum):
     binary = 1
     grayscale = 2
+    rgb = 3
 
 
 def load_image(
@@ -26,6 +27,17 @@ def load_image(
     open_dialog.setWindowTitle("Save Image")
     open_dialog.setNameFilter("BMP Image (*.bmp)")
     open_dialog.setAcceptMode(QFileDialog.AcceptMode.AcceptOpen)
+
+    if format == ImageFormat.rgb:
+        open_dialog.setNameFilters(
+            (
+                "Image Files (*.png *.jpeg *.bmp)",
+                "PNG Image (*.png)",
+                "JPEG Image (*.jpeg)",
+                "JPG Image (*.jpg)",
+                "BMP Image (*.bmp)",
+            )
+        )
 
     file = None
     if open_dialog.exec() == QFileDialog.DialogCode.Accepted:
@@ -49,6 +61,9 @@ def load_image(
         if not img.isGrayscale():
             raise InvalidImageFormat()
         img = img.convertToFormat(QImage.Format.Format_Grayscale8)
+
+    if format == ImageFormat.rgb:
+        img = img.convertToFormat(QImage.Format.Format_RGB32)
 
     return img
 

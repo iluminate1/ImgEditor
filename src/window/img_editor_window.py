@@ -6,6 +6,7 @@ from widgets import (
     GrayscaleToMonoWidget,
     MedianFilterWidget,
     MonoToGrayscaleWidget,
+    RgbToGrayscaleWidget,
 )
 
 
@@ -27,4 +28,7 @@ class ImageEditor(QMainWindow, ImageEditorWindowUI):
         )
         self.tab_expansion_layout.addWidget(
             ExpansionWidget(self.tab_expansion),
+        )
+        self.tab_rgb_to_grayscale_layout.addWidget(
+            RgbToGrayscaleWidget(self.tab_rgb_to_grayscale)
         )
