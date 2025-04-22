@@ -31,7 +31,7 @@ def load_image(
     if format == ImageFormat.rgb:
         open_dialog.setNameFilters(
             (
-                "Image Files (*.png *.jpeg *.bmp)",
+                "Image Files (*.png *.jpeg *.jpg *.bmp)",
                 "PNG Image (*.png)",
                 "JPEG Image (*.jpeg)",
                 "JPG Image (*.jpg)",
