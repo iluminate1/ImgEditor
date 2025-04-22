@@ -20,7 +20,7 @@
    <string>imgEditor</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QHBoxLayout" name="image_editro_window_layout">
+   <layout class="QVBoxLayout" name="verticalLayout">
     <property name="sizeConstraint">
      <enum>QLayout::SizeConstraint::SetDefaultConstraint</enum>
     </property>
@@ -97,6 +97,15 @@
         <string>Expansion for binary images</string>
        </attribute>
        <layout class="QVBoxLayout" name="tab_expansion_layout"/>
+      </widget>
+      <widget class="QWidget" name="tab_erosion">
+       <attribute name="title">
+        <string>E&amp;rosion for binary</string>
+       </attribute>
+       <attribute name="toolTip">
+        <string>Erosion filter for binary images</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="tab_erosion_layout"/>
       </widget>
       <widget class="QWidget" name="tab_rgb_to_grayscale">
        <attribute name="title">
