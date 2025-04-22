@@ -11,8 +11,8 @@ __all__ = (
     "MedianFilterWidgetUI",
     "MonoToGrayscaleWidgetUI",
     "RgbToGrayscaleWidgetUI",
+    "UnlockWidgetUI",
 )
-
 from .chart_dialog import ChartDialogUI
 from .erosion_widget import ErosionWidgetUI
 from .expansion_widget import ExpansionWidgetUI
@@ -23,3 +23,4 @@ from .matrix_dialog import MatrixDialogUI
 from .median_filter_widget import MedianFilterWidgetUI
 from .mono_to_graysacel_widget import MonoToGrayscaleWidgetUI
 from .rgb_to_grayscale_widget import RgbToGrayscaleWidgetUI
+from .unlock_widget import UnlockWidgetUI

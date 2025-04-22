@@ -8,6 +8,7 @@ from widgets import (
     MedianFilterWidget,
     MonoToGrayscaleWidget,
     RgbToGrayscaleWidget,
+    UnlockWidget,
 )
 
 
@@ -32,6 +33,9 @@ class ImageEditor(QMainWindow, ImageEditorWindowUI):
         )
         self.tab_erosion_layout.addWidget(
             ErosionWidget(self.tab_erosion),
+        )
+        self.tab_unlocking_layout.addWidget(
+            UnlockWidget(self.tab_unlocking),
         )
         self.tab_rgb_to_grayscale_layout.addWidget(
             RgbToGrayscaleWidget(self.tab_rgb_to_grayscale)
