@@ -2,6 +2,7 @@ from PySide6.QtWidgets import QMainWindow
 
 from ui import ImageEditorWindowUI
 from widgets import (
+    ClosingWidget,
     ErosionWidget,
     ExpansionWidget,
     GrayscaleToMonoWidget,
@@ -36,6 +37,9 @@ class ImageEditor(QMainWindow, ImageEditorWindowUI):
         )
         self.tab_unlocking_layout.addWidget(
             UnlockWidget(self.tab_unlocking),
+        )
+        self.tab_closures_layout.addWidget(
+            ClosingWidget(self.tab_closures),
         )
         self.tab_rgb_to_grayscale_layout.addWidget(
             RgbToGrayscaleWidget(self.tab_rgb_to_grayscale)

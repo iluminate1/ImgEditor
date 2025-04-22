@@ -1,4 +1,5 @@
 __all__ = (
+    "ClosingWidget",
     "ErosionWidget",
     "ExpansionWidget",
     "GrayscaleToMonoWidget",
@@ -8,6 +9,7 @@ __all__ = (
     "UnlockWidget",
 )
 
+from .closing import ClosingWidget
 from .erosion import ErosionWidget
 from .expansion import ExpansionWidget
 from .grayscale_to_mono import GrayscaleToMonoWidget

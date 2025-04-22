@@ -8,6 +8,7 @@ Application realize some images processing algorithms on pure python.
  - Expansion for binary images.
  - Erosion for binary images
  - Unlocking for binary images
+ - Closing for binary images
  - Convert rgb image to grayscale.
 
 ## Run Locally

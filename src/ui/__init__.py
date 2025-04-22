@@ -1,5 +1,6 @@
 __all__ = (
     "ChartDialogUI",
+    "ClosingWidgetUI",
     "ErosionWidgetUI",
     "ExpansionWidgetUI",
     "GrayscaleToMonoWidgetUI",
@@ -14,6 +15,7 @@ __all__ = (
     "UnlockWidgetUI",
 )
 from .chart_dialog import ChartDialogUI
+from .closing_widget import ClosingWidgetUI
 from .erosion_widget import ErosionWidgetUI
 from .expansion_widget import ExpansionWidgetUI
 from .grayscale_to_mono_widget import GrayscaleToMonoWidgetUI
