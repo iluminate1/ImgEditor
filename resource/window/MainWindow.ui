@@ -20,7 +20,7 @@
    <string>imgEditor</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout">
+   <layout class="QHBoxLayout" name="horizontalLayout">
     <property name="sizeConstraint">
      <enum>QLayout::SizeConstraint::SetDefaultConstraint</enum>
     </property>
@@ -48,7 +48,7 @@
        <enum>QTabWidget::TabPosition::North</enum>
       </property>
       <property name="currentIndex">
-       <number>4</number>
+       <number>5</number>
       </property>
       <property name="usesScrollButtons">
        <bool>true</bool>
@@ -106,6 +106,15 @@
         <string>Erosion filter for binary images</string>
        </attribute>
        <layout class="QVBoxLayout" name="tab_erosion_layout"/>
+      </widget>
+      <widget class="QWidget" name="tab_unlocking">
+       <attribute name="title">
+        <string>Unlocking</string>
+       </attribute>
+       <attribute name="toolTip">
+        <string>Unlocking for binary images</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="tab_unlocking_layout"/>
       </widget>
       <widget class="QWidget" name="tab_rgb_to_grayscale">
        <attribute name="title">
